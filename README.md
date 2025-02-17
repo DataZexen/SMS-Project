@@ -1,13 +1,14 @@
-# SMS-Project
-A student management system project
-
+# List to store student data (each student is represented as a dictionary)
 students = []
+
+# Function to add a new student
 def add_student():
     print("\n--- Add New Student ---")
     name = input("Enter name: ")
     roll_number = input("Enter roll number: ")
     age = int(input("Enter age: "))
     student_class = input("Enter class: ")
+
     student = {
         "name": name,
         "roll_number": roll_number,
@@ -16,6 +17,8 @@ def add_student():
     }
     students.append(student)
     print(f"\nStudent {name} added successfully!")
+
+# Function to view all students
 def view_students():
     print("\n--- View All Students ---")
     if students:
@@ -25,30 +28,45 @@ def view_students():
             print(f"{student['name']:<20} {student['roll_number']:<10} {student['age']:<5} {student['class']:<10}")
     else:
         print("No students found.")
+
+# Function to update student details
 def update_student():
     print("\n--- Update Student Information ---")
     roll_number = input("Enter roll number of student to update: ")
+    
+    # Search for the student by roll number
     student = next((s for s in students if s['roll_number'] == roll_number), None)
+
     if student:
         print(f"Current details: {student}")
         name = input(f"Enter new name (current: {student['name']}): ") or student['name']
         age = input(f"Enter new age (current: {student['age']}): ") or student['age']
         student_class = input(f"Enter new class (current: {student['class']}): ") or student['class']
+
+        # Update the student details
         student['name'] = name
         student['age'] = int(age)
         student['class'] = student_class
+
         print(f"\nStudent {roll_number} updated successfully!")
     else:
         print(f"Student with roll number {roll_number} not found.")
+
+# Function to delete a student
 def delete_student():
     print("\n--- Delete Student ---")
     roll_number = input("Enter roll number of student to delete: ")
+    
+    # Find the student by roll number
     student = next((s for s in students if s['roll_number'] == roll_number), None)
+
     if student:
         students.remove(student)
         print(f"\nStudent {roll_number} deleted successfully!")
     else:
         print(f"Student with roll number {roll_number} not found.")
+
+# Menu-driven program
 def main():
     while True:
         print("\n--- Student Management System ---")
@@ -57,7 +75,9 @@ def main():
         print("3. Update Student")
         print("4. Delete Student")
         print("5. Exit")
+
         choice = input("\nEnter your choice (1-5): ")
+
         if choice == '1':
             add_student()
         elif choice == '2':
@@ -71,6 +91,7 @@ def main():
             break
         else:
             print("Invalid choice, please try again.")
+
 if __name__ == "__main__":
     main()
 11
