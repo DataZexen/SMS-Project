@@ -1,7 +1,6 @@
 # Student Management System
 students = []
 
-# Function to add a new student
 def add_student():
     print("\n--- Add New Student ---")
     name = input("Enter name: ")
@@ -18,7 +17,6 @@ def add_student():
     students.append(student)
     print(f"\nStudent {name} added successfully!")
 
-# Function to view all students
 def view_students():
     print("\n--- View All Students ---")
     if students:
@@ -29,7 +27,6 @@ def view_students():
     else:
         print("No students found.")
 
-# Function to update student details
 def update_student():
     print("\n--- Update Student Information ---")
     roll_number = input("Enter roll number of student to update: ")
@@ -52,7 +49,6 @@ def update_student():
     else:
         print(f"Student with roll number {roll_number} not found.")
 
-# Function to delete a student
 def delete_student():
     print("\n--- Delete Student ---")
     roll_number = input("Enter roll number of student to delete: ")
@@ -66,7 +62,6 @@ def delete_student():
     else:
         print(f"Student with roll number {roll_number} not found.")
 
-# Menu-driven program
 def main():
     while True:
         print("\n--- Student Management System ---")
