@@ -31,7 +31,7 @@ def update_student():
     print("\n--- Update Student Information ---")
     roll_number = input("Enter roll number of student to update: ")
     
-    # Search for the student by roll number
+ 
     student = next((s for s in students if s['roll_number'] == roll_number), None)
 
     if student:
@@ -52,8 +52,7 @@ def update_student():
 def delete_student():
     print("\n--- Delete Student ---")
     roll_number = input("Enter roll number of student to delete: ")
-    
-    # Find the student by roll number
+
     student = next((s for s in students if s['roll_number'] == roll_number), None)
 
     if student:
