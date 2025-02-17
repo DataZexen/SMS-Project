@@ -1,4 +1,4 @@
-# List to store student data (each student is represented as a dictionary)
+# Student Management System
 students = []
 
 # Function to add a new student
